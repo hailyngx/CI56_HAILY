@@ -7,7 +7,7 @@
     <script type="text/javascript">		
     var students = []; 
     var numOfA = 0, numOfF = 0, numOfB = 0;
-
+    
     function result() { //tạo hàm xuất điểm
 
         var grade; //biến xếp hạng
@@ -46,18 +46,19 @@
 
     function request(){
         //Tính số sinh viên được A 
-        if (grade == "A") {
+        if (grade = "A") {
                 numOfA += 1;
             }
         //Tính số sinh viên được F 
-        if (grade == "F") {
+        if (grade = "F") {
             numOfF += 1;
             }
         //Chọn bất kì 1 sinh viên, tính xác suất để sinh viên đó đạt B
-        if (grade == "B") {
+        if (grade = "B") {
             numOfB += 1;
             }
-        var percentB = numOfB/students.length*100
+        var percentB;
+        percentB = numOfB/students.length*100
         document.getElementById('percentB').value = percentB;
         document.getElementById('numOfA').value = numOfA;
         document.getElementById('numOfF').value = numOfF;
@@ -80,10 +81,11 @@
     </fieldset>
     
         <h2>Request</h2>
-        
         <table>
             <tr><td style="width: 150">Probability of getting B</td><td><input type="text" id="percentB"></td></tr>
-            <tr><td style="width: 150">Number of A</td><td><input type="text" id="numofA"></td></tr>
-            <tr><td style="width: 150">Number of F (fail)</td><td><input type="text" id="numofF"></td></tr>
+            <tr><td style="width: 150">Number of A</td><td><input type="text" id="numOfA"></td></tr>
+            <tr><td style="width: 150">Number of F (fail)</td><td><input type="text" id="numOfF"></td></tr>
+        </table><br/><br/>
+        <input type="button" value="Request" onClick="request()">
 </body>
 </html>
