@@ -7,10 +7,9 @@
     <script type="text/javascript">		
     var students = []; 
     var numOfA = 0, numOfF = 0, numOfB = 0;
-    
-    function result() { //tạo hàm xuất điểm
+    var grade; //biến xếp hạng
 
-        var grade; //biến xếp hạng
+    function result() { //tạo hàm xuất điểm
 
         //biến đọc điểm
         var midterm = document.getElementById('midterm').value;
@@ -46,19 +45,19 @@
 
     function request(){
         //Tính số sinh viên được A 
-        if (grade = "A") {
+        if (grade == "A") {
                 numOfA += 1;
             }
         //Tính số sinh viên được F 
-        if (grade = "F") {
+        if (grade == "F") {
             numOfF += 1;
             }
         //Chọn bất kì 1 sinh viên, tính xác suất để sinh viên đó đạt B
-        if (grade = "B") {
+        if (grade == "B") {
             numOfB += 1;
             }
         var percentB;
-        percentB = numOfB/students.length*100
+        percentB = numOfB/students.length*100;
         document.getElementById('percentB').value = percentB;
         document.getElementById('numOfA').value = numOfA;
         document.getElementById('numOfF').value = numOfF;
