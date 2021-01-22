@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ket qua hoc tap</title>
+    <title>Score Receipt</title>
     <script type="text/javascript">		
     var students = []; 
+    var numOfA = 0, numOfF = 0, numOfB = 0;
+
     function result() { //tạo hàm xuất điểm
 
         var grade; //biến xếp hạng
@@ -18,7 +20,7 @@
         //tính điểm tổng kết
         overall = midterm*0.4 + final*0.6;
                 
-        //dùng hàm switch đặt điều kiện cho việc xếp hạng và học lực					
+        //dùng hàm switch đặt điều kiện cho việc xếp điểm					
         switch (
                 (overall >= 8.0 && overall <= 10.0) ? 1 : 
                 (overall >= 7.0 && overall < 8.0) ? 2 : 
@@ -42,24 +44,23 @@
         document.getElementById('grade').value = grade;
 }
 
-let numOfA = 0, numOfF = 0, numOfB = 0;
-function request(){
-//Tính số sinh viên được A 
- if (grade == "A") {
-        numOfA += 1;
-    }
- //Tính số sinh viên được F 
-if (grade == "F") {
-    numOfF += 1;
-    }
-//Chọn bất kì 1 sinh viên, tính xác suất để sinh viên đó đạt B
-if (grade == "B") {
-    numOfB += 1;
-    }
-var percentB = numofB/students.length*100
-document.getElementById('percentB').value = document.getElementById('percentB').value;
-document.getElementById('numofA').value = numOfA;
-document.getElementById('numofF').value = numofF;
+    function request(){
+        //Tính số sinh viên được A 
+        if (grade == "A") {
+                numOfA += 1;
+            }
+        //Tính số sinh viên được F 
+        if (grade == "F") {
+            numOfF += 1;
+            }
+        //Chọn bất kì 1 sinh viên, tính xác suất để sinh viên đó đạt B
+        if (grade == "B") {
+            numOfB += 1;
+            }
+        var percentB = numOfB/students.length*100
+        document.getElementById('percentB').value = percentB;
+        document.getElementById('numOfA').value = numOfA;
+        document.getElementById('numOfF').value = numOfF;
 }
 </script>
 </head>
@@ -81,8 +82,8 @@ document.getElementById('numofF').value = numofF;
         <h2>Request</h2>
         
         <table>
-            <tr><td style="width: 150">Probability of getting B</td><td><input type="text" id="percentB" readonly></td></tr>
-            <tr><td style="width: 150">Number of A</td><td><input type="text" id="numofA" readonly></td></tr>
-            <tr><td style="width: 150">Number of F (fail)</td><td><input type="text" id="numofF" readonly></td></tr>
+            <tr><td style="width: 150">Probability of getting B</td><td><input type="text" id="percentB"></td></tr>
+            <tr><td style="width: 150">Number of A</td><td><input type="text" id="numofA"></td></tr>
+            <tr><td style="width: 150">Number of F (fail)</td><td><input type="text" id="numofF"></td></tr>
 </body>
 </html>
