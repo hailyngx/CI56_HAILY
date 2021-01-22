@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ket qua hoc tap</title>
+    <script type="text/javascript">		
+    var students = []; 
+    function result() { //tạo hàm xuất điểm
+
+        var grade; //biến xếp hạng
+
+        //biến đọc điểm
+        var midterm = document.getElementById('midterm').value;
+        var final = document.getElementById('final').value;
+        var overall = document.getElementById('overall').value;
+        
+        //tính điểm tổng kết
+        overall = midterm*0.4 + final*0.6;
+                
+        //dùng hàm switch đặt điều kiện cho việc xếp hạng và học lực					
+        switch (
+                (overall >= 8.0 && overall <= 10.0) ? 1 : 
+                (overall >= 7.0 && overall < 8.0) ? 2 : 
+                (overall >= 6.0 && overall < 7.0) ? 3 : 
+                (overall >= 4.0 && overall < 6.0) ? 4 : 
+                (overall < 4.0) ? 5 : 0
+              )
+                
+                {
+                    case 1 : grade = "A"; break;
+                    case 2 : grade = "B"; break;
+                    case 3 : grade = "C"; break;
+                    case 4 : grade = "D"; break;
+                    case 5 : grade = "F (fail)"; break;
+                }
+                
+            
+        //xuất phiếu điểm	
+        document.getElementById('name').value = document.getElementById('name').value;
+        document.getElementById('overall').value = overall;
+        document.getElementById('grade').value = grade;
+}
+
+let numOfA = 0, numOfF = 0, numOfB = 0;
+function request(){
+//Tính số sinh viên được A 
+ if (grade == "A") {
+        numOfA += 1;
+    }
+ //Tính số sinh viên được F 
+if (grade == "F") {
+    numOfF += 1;
+    }
+//Chọn bất kì 1 sinh viên, tính xác suất để sinh viên đó đạt B
+if (grade == "B") {
+    numOfB += 1;
+    }
+var percentB = numofB/students.length*100
+document.getElementById('percentB').value = document.getElementById('percentB').value;
+document.getElementById('numofA').value = numOfA;
+document.getElementById('numofF').value = numofF;
+}
+</script>
+</head>
+
+<body>
+    <fieldset style="width:600px">
+        <legend><b>Score Input</b></legend>
+        Name: <input type="text" id="name"> &nbsp;&nbsp;
+        <br/><br/>
+        <table>
+            <tr><td style="width: 80">Midterm</td><td><input type="text" id="midterm"></td></tr>
+            <tr><td style="width: 80">Final</td><td><input type="text" id="final"></td></tr>
+            <tr><td style="width: 80">Overall</td><td><input type="text" id="overall"></td></tr>
+            <tr><td style="width: 80">Grade</td><td><input type="text" id="grade"></td></tr>				
+        </table><br/><br/>
+        <input type="button" value="Result" onClick="result()">
+    </fieldset>
+    
+        <h2>Request</h2>
+        
+        <table>
+            <tr><td style="width: 150">Probability of getting B</td><td><input type="text" id="percentB" readonly></td></tr>
+            <tr><td style="width: 150">Number of A</td><td><input type="text" id="numofA" readonly></td></tr>
+            <tr><td style="width: 150">Number of F (fail)</td><td><input type="text" id="numofF" readonly></td></tr>
+</body>
+</html>
