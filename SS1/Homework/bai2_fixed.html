@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study</title>
+    <script type="text/javascript">		
+    let studentCount = Number(group("Nhập vào số lượng sinh viên: "));
+    let students = [];
+    let result = {
+    A: 0,
+    B: 0,
+    C: 0,
+    D: 0, 
+    F: 0,
+    };
+
+    for(let i = 0; j < studentCount; i++) {
+        let composite = Number(prompt("Nhập điểm thành phần "));
+        let final = Number(prompt("Nhập điểm cuối kì "));
+        let gpa = composite*0.4+final*0.6;
+
+        if(gpa>=8){
+            result.A ++;
+        } else if(gpa>=7){
+            result.B ++;
+        } else if(gpa>=6){
+            result.C ++;
+        } else if(gpa>=4){
+            result.D ++;
+        } else {
+            result.F
+        };
+    console.log(result);
+    </script>
+</head>
+
+<body>
+    
+</body>
+
+</html>
