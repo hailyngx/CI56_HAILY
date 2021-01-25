@@ -49,6 +49,5 @@ Sales.add(household2);
 Sales.add(cloth1);
 Sales.add(cloth2);
 Sales.delete(cloth2)
-
 Sales.doanhThu()
 console.log(Sales);
