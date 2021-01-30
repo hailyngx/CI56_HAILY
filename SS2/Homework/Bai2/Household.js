@@ -1,9 +1,9 @@
-import {Goods} from "./Goods"
+import {Goods} from "./Goods.js"
 
-export class Household extends Goods {
+export default class Household extends Goods {
     doBen;
-    constructor(dinhDanh, tenMatHang, giaThanh, nhaSX, ngayNhap, doBen) {
-        super(dinhDanh, tenMatHang, giaThanh, nhaSX, 0.1, ngayNhap);
+    constructor(tenMatHang, giaThanh, nhaSX, doBen) {
+        super(dinhDanh, tenMatHang, giaThanh, nhaSX, 0.1);
         this.doBen = doBen;
     }
 }

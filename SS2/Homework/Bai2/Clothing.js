@@ -1,10 +1,10 @@
 import {Goods} from "./Goods"
 
-export class Clothing extends Goods {
+export default class Clothing extends Goods {
     xuatXu;
     chatLieu;
-    constructor(dinhDanh, tenMatHang, giaThanh, nhaSX, ngayNhap, xuatXu, chatLieu) {
-        super(dinhDanh, tenMatHang, giaThanh, nhaSX, 0.05, ngayNhap);
+    constructor(tenMatHang, giaThanh, nhaSX, xuatXu, chatLieu) {
+        super(tenMatHang, giaThanh, nhaSX, 0.05);
         this.xuatXu = xuatXu;
         this.chatLieu = chatLieu;
     }

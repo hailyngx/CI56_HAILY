@@ -1,4 +1,4 @@
-export class Goods {
+export default class Goods {
     dinhDanh;
     tenMatHang;
     giaThanh;
@@ -6,11 +6,13 @@ export class Goods {
     giamGia;
     ngayNhap;
 
-    constructor(dinhDanh, tenMatHang, giaThanh, nhaSX, ngayNhap) {
-        this.dinhDanh = dinhDanh;
+    constructor(tenMatHang, giaThanh, nhaSX, giamGia) {
         this.tenMatHang = tenMatHang;
         this.giaThanh = giaThanh;
         this.nhaSX = nhaSX;
-        this.ngayNhap = ngayNhap;
+        this.giamGia = giamGia;
+        this.ngayNhap = new Date().toISOString();
+
+        this.dinhDanh = '_' + Math.random().toString(36).substr(2,9);
     }
 }
