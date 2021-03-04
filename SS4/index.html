@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <p class="h1 text-center">Cộng hoà XHCN Việt Nam</p>
+    <p class="h3 text-center">Độc lập - Tự do - Hạnh phúc</p>
+    <div class="container">
+    <form name="myForm" id="myForm">
+        <div class ="form-group">
+            <label>Tên cuộc bầu cử</label>
+            <input type="text" name="name" id="name" class="form-control">
+            <div id="z-name"></div>
+        </div>
+
+        <div class ="form-group">
+            <label>Số phiếu bầu</label>
+            <input type="text" name="num-of-vote" id="num-of-vote" class="form-control" onkeyup="check()">
+            <div id="z-num-of-vote"></div>
+        </div>
+
+        <div class ="form-group">
+            <label>Danh sách ứng viên</label>
+            <div id="candidate-list">
+            <input type="text" name="candidates" id="candidates" class="form-control" placeholder="Tên ứng viên" onkeyup="check()">
+            <div id="z-candidates"></div>
+            </div>
+            <br>
+            <button type="button" id="add-candidate-btn" class = "btn btn-primary">+</button>
+        </div>
+        <div class="form-group">
+            <label>Tính hợp lệ</label>
+            <input type="text" name="validity" id="validity" class="form-control" placeholder="Số ứng viên tối đa được chọn trong 1 phiếu" onkeyup="check()">
+            <div id="z-validity"></div>
+        </div>
+
+        <button class="btn btn-secondary" id="submit">Tiến hành kiểm phiếu</button>
+    </form>
+</div>
+
+    <script src="./vote.js"></script>
+</body>
+</html>
