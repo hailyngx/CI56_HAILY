@@ -51,7 +51,7 @@ function check() {
         var error = myerror[i];
         var div = nearby[i];
 
-        if (data[i]=="") {
+        if (data[i] == null || data[i]=="") {
             document.getElementById(div).innerHTML = error;
         } 
         else {
@@ -59,6 +59,7 @@ function check() {
         }
     }
 }
+
  
 function submitByJavascript()  {
     var myForm = document.forms["myForm"];
