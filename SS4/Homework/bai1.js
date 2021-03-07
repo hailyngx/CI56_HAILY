@@ -8,3 +8,5 @@ mergedArray.sort(function(a, b){
 });
 
 console.log(mergedArray)
+
+//dùng vòng lặp while
