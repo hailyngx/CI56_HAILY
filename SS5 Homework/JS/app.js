@@ -40,7 +40,7 @@ for(let courseData of data) {
     $courseContainer.setAttribute('name', courseData.name);
     $courseContainer.setAttribute('status', "Status: " + courseData.status);
 
-    let $classMembers = document.createElement('div')
+    let $classMembers = document.createElement('class-members')
 
     let $teacher = document.createElement('info-container');
     $teacher.setAttribute('name', "Teacher's name: " + courseData.teacher.name);
@@ -48,7 +48,7 @@ for(let courseData of data) {
     $teacher.setAttribute('address', "Address: " + courseData.teacher.address);
 
 
-    let $students = document.createElement('div');
+    let $students = document.createElement('students');
     for (let student of courseData.students) {
         let $student = document.createElement('info-container');
         $student.setAttribute('name', "Student's name: " + student.name)
